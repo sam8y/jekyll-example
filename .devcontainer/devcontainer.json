@@ -1,0 +1,23 @@
+{
+  "name": "jekyll-devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "CUSER": "${localEnv:USER}"
+    }
+  },
+  "containerEnv": {
+    "HOME": "/home/${localEnv:USER}"
+  },
+  "runArgs": [
+    "--security-opt=label=disable",
+    "--name=jekyll-devcontainer"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+      ]
+    }
+  },
+  "remoteUser": "${localEnv:USER}"
+}
